@@ -13,10 +13,10 @@ proc finish {} {
 	exec nam out.nam
 	exit 0
 }
+
 set s1 [$ns node]
 set r1 [$ns node]
 set r2 [$ns node]
-
 
 $ns duplex-link $r1 $r2 256kb 150ms DropTail
 $ns duplex-link-op $r1 $r2 orient right-down
@@ -26,7 +26,6 @@ $ns duplex-link-op $s1 $r1 orient right-up
 
 $ns duplex-link $s1 $r2 256kb 150ms DropTail
 $ns duplex-link-op $s1 $r2 orient right
-
 $ns queue-limit $s1 $r2 10
 
 set snk [new Agent/TCPSink]

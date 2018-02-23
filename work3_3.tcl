@@ -1,5 +1,5 @@
 set ns [new Simulator]
-#задание динамической модели маршрутизации для всех узлов
+#вычисление новых маршрутов при разрывах/восстановлениях
 $ns rtproto Session
 
 $ns color 1 Blue
@@ -44,6 +44,7 @@ $ns duplex-link-op $r1 $s3 orient down
 
 $ns duplex-link $r2 $r3 256kb 20ms DropTail
 $ns duplex-link-op $r2 $r3 orient right-up
+#цена канала от r2 к r3
 $ns cost $r2 $r3 5
 $ns cost $r3 $r2 5
 
